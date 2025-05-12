@@ -8,6 +8,7 @@ export default function LoginModal({ onSubmit }: LoginModalProps) {
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
 
+  // Simple email validation regex
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
