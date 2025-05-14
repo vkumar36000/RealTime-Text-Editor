@@ -25,6 +25,10 @@ export default function LoginModal({ onSubmit }: LoginModalProps) {
     onSubmit(email.trim())
   }
 
+  const handleContinueAsGuest = () => {
+    onSubmit('anonymous')
+  }
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-xl shadow-xl w-80">
@@ -45,6 +49,14 @@ export default function LoginModal({ onSubmit }: LoginModalProps) {
             Join
           </button>
         </form>
+
+        {/* Continue as Guest Option */}
+        <button
+          onClick={handleContinueAsGuest}
+          className="mt-4 text-blue-600 hover:underline text-sm text-center"
+        >
+          Continue as Guest
+        </button>
       </div>
     </div>
   )
